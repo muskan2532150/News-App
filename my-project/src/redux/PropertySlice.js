@@ -8,13 +8,13 @@ const initialState = []
   })
 
   export const PropertySlice = createSlice({
-    name:'Property',
+    name:'property',
     initialState,
-    reducers:{
-    },
+    reducers:{},
     extraReducers:(builder) => {
         builder.addCase(PropertyThunk.fulfilled,(state,action)=>{
-            return {...action.payload}
+          console.log([...action.payload])
+            return [...action.payload]
         });
     }
   })
